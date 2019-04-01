@@ -26,19 +26,19 @@ class GetInfo(View):
         sql4="""SELECT ip, data from	Dashboard_upsdata_temp"""
         cursor.execute(sql4)
         data=cursor.fetchall()
-        print('---------',data)
+        # print('---------',data)
         # cursor.execute(sql)
         # obj1=models.RealData.objects.all()
         dic={}
-
+        '''data里面的数据是ip+data的元组 （（192.168.1.1,220,222,222,000,33,55....），（））'''
         for i in data:
             addr=i[0]
             data=i[1].split()
-            print('+++++++++++', data)
+            # print('+++++++++++', data)
             infos = [data[0], data[1], data[2], data[3] + '%', data[4], data[5].replace('.',''), data[6]]
             # print(type(data[1]))
             obj3 = models.Region.objects.filter(ip=addr).first()
-            print('111111111')
+            # print('111111111')
             # print("----->",obj3.ip,obj3.name)
             dic = {
                 'name':obj3.name,
@@ -52,7 +52,7 @@ class GetInfo(View):
                 'battery_voltage': infos[5],
                 'temperature': infos[6],
             }
-            print(dic)
+            # print(dic)
             models.UpsInfo.objects.create(**dic)
         err_msg='UPS状态异常...'
         obj2 = models.UpsInfo.objects.all()
