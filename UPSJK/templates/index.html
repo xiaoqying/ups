@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UPS监控</title>
+    <link href="/static/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+    <style>
+        .background{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<h1>Monitor[九钢机房UPS监控平台]</h1>
+<form action="/" method="get">
+    <hr>
+    <button class="btn btn-primary btn-sm btn-block">立即刷新</button>
+    <hr>
+</form>
+
+{% for i in obj2 %}
+
+<div class="col-md-2 col-sm-6 background">
+    <div class="panel panel-primary">
+        <div class="panel-heading"><h4 class="panel-title">{{ i.name }}</h4></div>
+        <div class="panel-body">
+            <div class="strong"><strong>{{ i.ipaddress }}</strong></div>
+            <div> 输入电压： <span>{{ i.in_voltage }} V</span></div>
+{#            <div> 输入故障电压： <span>{{ i.in_fault_voltage }} </span></div>#}
+            <div> 输出电压： <span>{{ i.out_voltage }} V</span></div>
+            <div> 输出电流： <span>{{ i.out_current }}</span></div>
+            <div> 电池电压： <span>{{ i.battery_voltage }} v</span></div>
+{#            <div> 温度： <span>{{ i.temperature }}</span></div>#}
+        </div>
+
+{#        {% if i.in_voltage < "234" %}#}
+{#            <span style="color: crimson">{{ err_msg }}</span>#}
+
+        <div class="panel-footer"> &nbsp; <span> <span class="pull-left text-success">运行正常</span>   <span
+                class="pull-right text-success">设备在线</span>  </span></div>
+{#        {% endif %}#}
+    </div>
+</div>
+{% endfor %}
+</body>
+</html>

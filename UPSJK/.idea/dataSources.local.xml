@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="ups@192.168.101.24" uuid="a77f2224-f3ab-4c99-b354-7e3c28b97f24">
+      <database-info product="MySQL" version="5.5.60-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>ups</user-name>
+      <introspection-schemas>*:ups</introspection-schemas>
+    </data-source>
+    <data-source name="Django default" uuid="16725980-45de-43ee-8cf5-d784b1cc4256">
+      <database-info product="MySQL" version="5.5.60-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <user-name>ups</user-name>
+      <introspection-schemas>*:ups</introspection-schemas>
+    </data-source>
+  </component>
+</project>
