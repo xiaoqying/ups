@@ -11,7 +11,7 @@
     </style>
 </head>
 <body>
-<h1>-九钢机房UPS监控平台-</h1>
+<h1>[九钢机房UPS监控平台]</h1>
 <form action="/" method="get">
     <hr>
     <button class="btn btn-primary btn-sm btn-block">立即刷新</button>
@@ -36,8 +36,15 @@
 {#        {% if i.in_voltage < "234" %}#}
 {#            <span style="color: crimson">{{ err_msg }}</span>#}
 
-        <div class="panel-footer"> &nbsp; <span> <span class="pull-left text-success">运行正常</span>   <span
-                class="pull-right text-success">设备在线</span>  </span></div>
+        <div class="panel-footer"> &nbsp; <span class="pull-left text-success">
+            {% if i.in_voltage > "180" %}
+                运行正常
+            {% else %}
+                <span style="color:red ">{{ err_msg }}</span>
+            {% endif %}
+        </span></div>
+{#        <div><span#}
+{#                class="pull-right text-success">设备在线</span>  </div>#}
 {#        {% endif %}#}
     </div>
 </div>
